@@ -5,9 +5,9 @@ import AdminDashboard from './Components/DashBoard/AdminDashboard';
 export default function App() {
   return (
     <>
-    {/* <Login/> */}
+    <Login/>
     {/* <TeamMember/> */}
-  <AdminDashboard/>
+  {/* <AdminDashboard/> */}
     </>
   )
 }
