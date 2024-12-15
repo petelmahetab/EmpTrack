@@ -127,7 +127,7 @@ const admin = [
     "password": "123"
   }
 ];
-//We need to create 2 function for seting and getting the dat localStorage. call using AppJSX useEffect import .Side stack run
+//We need to create 2 function for seting and getting the data localStorage. call using AppJSX useEffect import .Side stack run
 export const setLocalStorage=()=>{//we need to Convert object into JSON or Array to string
      localStorage.setItem('employees',JSON.stringify(employees))
      localStorage.setItem('admin',JSON.stringify(admin))
@@ -137,7 +137,6 @@ export const getLocalStorage=()=>{
     const employee=JSON.parse(localStorage.getItem("employees"))
     const admin=JSON.parse(localStorage.getItem("admin"))
 
-
- console.log(employee,admin)
+return{employee,admin}
 
 };

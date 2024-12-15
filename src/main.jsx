@@ -1,15 +1,16 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
+import AuthProvider from './Context/AuthProvider'
 import App from './App.jsx'
-import AuthContext from './Context/AuthContext.jsx'
+// import AuthContext from './Context/AuthContext.jsx'
 
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <AuthContext>
+    <AuthProvider>
       <App/>
-    </AuthContext>
+    </AuthProvider>
   </StrictMode>
 )

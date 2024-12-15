@@ -3,15 +3,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
 import { useState } from 'react';
 
-const Login=()=> {
+const Login=({handleLogin})=> {
   // We have to create an 2 ways Binding then Usestate
   const [email, setEmail] = useState('') //For Email
   const [password, setpassword] = useState('')
+
+
+  //when we are going o submit the form using this function
   const SubmitHandler=(e)=>{
     e.preventDefault();
-    console.log("Email",email)
-    console.log("Password",password)
-
+    handleLogin(email,password)
+   
     setEmail('')
     setpassword('')
   }
