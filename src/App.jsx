@@ -5,14 +5,18 @@ import AdminDashboard from './Components/DashBoard/AdminDashboard';
 import { AuthContext } from './Context/AuthProvider';
 import { getLocalStorage, setLocalStorage } from './Utils/LocalStorage';
 
+
 export default function App() {
   const [user, setUser] = useState(null);
   const authData=useContext(AuthContext);
-  console.log(authData)
+  // console.log()
   const handleLogin = (mail, pass) => {
     if (mail === 'admin@one.com' && pass === '123') {
       setUser('admin');
-    } else if (mail === 'user@me.com' && pass === '123') {
+    } else if (    authData &&
+      authData.employees &&
+      authData.employees.find((e) => e.email === email && e.pass === pass)
+  ) {
       setUser('employe');
     } else {
       alert('Invalid Credentials.');
@@ -22,9 +26,7 @@ export default function App() {
 const data=useContext(AuthContext);
 console.log(data)
 
-useEffect(()=>{
-  setLocalStorage();
-},[])//Empty array dependancy will Run only Once..
+
   return (
     <>
       {/* If user is not logged in, show Login component */}
